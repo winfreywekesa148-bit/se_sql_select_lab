@@ -42,7 +42,7 @@ print(df_executive)
 
 # STEP 6
 # Replace None with your code
-df_name_length = pd.read_sql("""SELECT last_name, LENGTH(last_name) AS name_length FROM employees""", conn)
+df_name_length = pd.read_sql("""SELECT lastName, LENGTH(lastName) AS name_length FROM employees""", conn)
 
 # STEP 7
 # Replace None with your code
