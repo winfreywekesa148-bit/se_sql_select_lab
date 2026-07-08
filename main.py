@@ -47,7 +47,7 @@ order_details = pd.read_sql("""SELECT * FROM orderDetails;""", conn)
 
 # STEP 8
 # Replace None with your code
-sum_total_price = pd.read_sql("""SELECT SUM(priceEach * quantityOrdered) AS total_price FROM orderDetails;""", conn).sum()
+sum_total_price = pd.read_sql("""SELECT SUM(round(priceEach, 2) * quantityOrdered) AS total_price FROM orderDetails;""", conn).sum()
 
 # STEP 9
 # Replace None with your code
