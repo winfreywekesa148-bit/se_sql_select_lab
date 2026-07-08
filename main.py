@@ -13,12 +13,10 @@ print(employee_data)
 # STEP 2
 # Replace None with your code
 df_first_five = pd.read_sql("""SELECT employeeNumber, lastName FROM employees;""", conn).head()
-print(df_first_five)
 
 # STEP 3
 # Replace None with your code
 df_five_reverse = pd.read_sql("""SELECT lastName, employeeNumber FROM employees;""", conn).head()
-print(df_five_reverse)
 
 # STEP 4
 # Replace None with your code
