@@ -19,7 +19,9 @@ print(df_first_five)
 
 # STEP 3
 # Replace None with your code
-df_five_reverse = None
+df_five_reverse = pd.read_sql("""SELECT lastName, employee_id FROM employees""", conn).head()
+print("Employees in Order:")
+print(df_five_reverse)
 
 # STEP 4
 # Replace None with your code
