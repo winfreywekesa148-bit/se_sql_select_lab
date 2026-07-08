@@ -2,13 +2,13 @@
 # Import SQL Library and Pandas
 import sqlite3
 import pandas as pd
+from main import datasqlite
 
 # STEP 1B
 # Connect to the database
 conn = sqlite3.connect('data.sqlite')
 
 employee_data = pd.read_sql("""SELECT * FROM employees""", conn)
-print("Employee Data:")
 print(employee_data)
 
 # STEP 2
@@ -37,7 +37,7 @@ df_executive = pd.read_sql("""
                            WHEN jobTitle LIKE '%VP Marketing%' THEN 'Executive'
                            ELSE 'Not Executive' END AS role
                             FROM employees
-                           '""", conn)
+                           """, conn)
 print(df_executive)
 
 # STEP 6
