@@ -7,10 +7,15 @@ import pandas as pd
 # Connect to the database
 conn = sqlite3.connect('data.sqlite')
 
+employee_data = pd.read_sql("""SELECT * FROM employees""", conn)
+print("Employee Data:")
+print(employee_data)
 
 # STEP 2
 # Replace None with your code
-df_first_five = None
+df_first_five = pd.read_sql("""SELECT employee_id, lastName FROM employees""", conn).head()
+print("Employees:")
+print(df_first_five)
 
 # STEP 3
 # Replace None with your code
