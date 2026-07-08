@@ -13,23 +13,32 @@ print(employee_data)
 
 # STEP 2
 # Replace None with your code
-df_first_five = pd.read_sql("""SELECT employee_id, lastName FROM employees""", conn).head()
+df_first_five = pd.read_sql("""SELECT employeeNumber, lastName FROM employees""", conn).head()
 print("Employees:")
 print(df_first_five)
 
 # STEP 3
 # Replace None with your code
-df_five_reverse = pd.read_sql("""SELECT lastName, employee_id FROM employees""", conn).head()
+df_five_reverse = pd.read_sql("""SELECT lastName, employeeNumber FROM employees""", conn).head()
 print("Employees in Order:")
 print(df_five_reverse)
 
 # STEP 4
 # Replace None with your code
-df_alias = None
+df_alias = pd.read_sql("""SELECT employeeNumber AS ID, lastName FROM employees""", conn).head()
+print(df_alias)
 
 # STEP 5
 # Replace None with your code
-df_executive = None
+df_executive = pd.read_sql("""
+                           SELECT first_name, last_name, jobTitle, 
+                           CASE WHEN jobTitle LIKE '%President%' THEN 'Executive'
+                           WHEN jobTitle LIKE '%VP Sales%' THEN 'Executive'
+                           WHEN jobTitle LIKE '%VP Marketing%' THEN 'Executive'
+                           ELSE 'Not Executive' END AS role
+                            FROM employees
+                           '""", conn)
+print(df_executive)
 
 # STEP 6
 # Replace None with your code
