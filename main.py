@@ -48,10 +48,14 @@ df_name_length = pd.read_sql("""SELECT last_name, LENGTH(last_name) AS name_leng
 # Replace None with your code
 df_short_title = pd.read_sql("""SELECT substr(jobTitle, 1, 2) AS short_title FROM employees """, conn)
 
+order_details = pd.read_sql("""SELECT * FROM orderDetails;""", conn) 
+
 # STEP 8
 # Replace None with your code
-sum_total_price = None
+sum_total_price = pd.read_sql("""SELECT SUM(priceEach * quantityOrdered) AS total_price FROM orderDetails""", conn).sum()
 
 # STEP 9
 # Replace None with your code
-df_day_month_year = None
+df_day_month_year = pd.read_sql("""SELECT orderNumber, orderDate, strftime('%d', orderDate) AS day, strftime('%m', orderDate) AS month, strftime('%Y', orderDate) AS year FROM orders""", conn)
+
+conn.close()
