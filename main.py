@@ -31,7 +31,7 @@ print(df_alias)
 # STEP 5
 # Replace None with your code
 df_executive = pd.read_sql("""
-                           SELECT first_name, last_name, jobTitle, 
+                           SELECT firstName, lastName, jobTitle, 
                            CASE WHEN jobTitle LIKE '%President%' THEN 'Executive'
                            WHEN jobTitle LIKE '%VP Sales%' THEN 'Executive'
                            WHEN jobTitle LIKE '%VP Marketing%' THEN 'Executive'
